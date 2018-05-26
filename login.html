@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>注册页面</title>
+		<title>登录页面</title>
 		<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="css/jigsaw.css"/>
-		<script src="js/jigsaw.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jigsaw.css"/>
+		<script src="js/jigsaw.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="top"></div>
@@ -21,44 +21,39 @@
 					<img src="images/zhengpin.png"/>
 				</div>
 			</div>
-	</header>
-	<div class="rl_wraper">
-			<div class="rl_main">
-				<div class="rl_le">
+		</header>
+		<div class="rl_wraper">
+				<div class="rl_main">
+					<div class="rl_le">
 						<img src="images/login.png"/>
-				</div>
-				<div class="rl_rg">
+					</div>
+					<div class="rl_rg">
 						<p>
-							<b>新用户注册</b>
+							<b>登录贝贝</b>
 							<span>
-								已有账户？
-								<a href="login.html">直接登录</a>
+								没有账户？
+								<a href="register.html">立即注册</a>
 							</span>
 						</p>
 						<label for="re_user">
 							<i class="iconfont icon-zhanghao"></i>
-							<input type="text" id="re_user" placeholder="您的用户名"/>
+							<input type="text" id="lg_user" class="userName" placeholder="您的用户名"/>
 						</label>
 						<label for="re_psw">
 							<i class="iconfont icon-07"></i>
-							<input type="password" id="re_psw" placeholder="密码，6-9位字母、数字或符号"/>
+							<input type="password" id="lg_psw" class="psw" placeholder="密码"/>
 						</label>
-						<label for="re_psw_again">
-							<i class="iconfont icon-07"></i>
-							<input type="password" id="re_psw_again" placeholder="再次输入密码"/>
-						</label>
+						<p style="display: flex;justify-content: space-between;">
+							<em style="font-style: normal;"><input type="checkbox" id="zd_login" />自动登录</em>
+							<a href="#">忘记密码？</a>
+						</p>
 						<div id="captcha" style="position: relative"></div>
-						<input type="button" id="btn_reg" class="btn" value="注册"/>
-						<p >为保障账户安全，建议密码为6-16位字符，包含数字、字母和特殊符号。</p>
-						<span>
-							注册即接受
-							<a href="#">《贝贝使用协议》</a>和
-							<a href="#">《社区使用协议》</a>
-						</span>
+						<input type="button" id="btn_login" class="btn" value="登录"/>
+					</div>
 				</div>
-			</div>
 		</div>
-		<!--links-->
+
+	<!--links-->
 	<div class="links">
 		<div class="links_main">
 			<a href="#">首页</a>
@@ -85,13 +80,11 @@
 		</div>
 	</footer>
 	<script type="text/javascript">
-		
-		var reg_btn=document.getElementById("btn_reg");
-		
+		var lg_btn=document.getElementById("btn_login");
 		 jigsaw.init(document.getElementById('captcha'), function () {
-		  	    reg_btn.onclick=reg_yz;
+		  	    lg_btn.onclick=login_yz;
 		  })
 	</script>
-	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

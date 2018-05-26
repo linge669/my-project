@@ -10,13 +10,13 @@
 	</head>
 	<body>
 		<!--top-->
-		<div class="top_wrapper">
+		<div class="top_wrapper" id="index_top">
 			<div class="top_main">
 				<div id="top_right">
 					<span class="spa">您好，</span>
-					<a class="spa" href="#">请登录</a>
+					<a class="spa" href="login.html">请登录</a>
 					<ul>
-						<li><a href="#" style="color: red;">免费注册</a></li>
+						<li><a href="register.html" style="color: red;">免费注册</a></li>
 						<li><a href="#">商家入驻</a></li>
 						<li>
 							<ul>
@@ -55,7 +55,7 @@
 		<header>
 			<div class="header_main">
 				<div class="logo">
-					<a href="#"><img src="images/logo.png"/></a>
+					<a href="index.html"><img src="images/logo.png"/></a>
 				</div>
 				<div class="logo_mid">
 					<img src="images/zhengpin.png"/>
@@ -101,12 +101,17 @@
 				</div>
 			</div>
 		</nav>
-		<ul class="ad">
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-		</ul>
+		<div class="ad">
+			<a href="#"><i class="iconfont icon-gouwuche"></i>
+					<span>
+						<h2>购物车空空如也</h2>
+						<p>快去添加商品</p>
+					</span>
+			</a>
+			<a href="#"><i class="iconfont icon-07"></i></a>
+			<a href="#"><i class="iconfont icon-kefu"></i></a>
+			<a href="#index_top">TOP</a>
+		</div>
 		<!--subnav-->
 		<div class="sub_nav">
 			<div class="sub_nav_main">
@@ -141,24 +146,28 @@
 				<i>精彩预告
 					<div>
 						<figure>
+							<a href="#">￥18.9</a>
 							<img src="images/1.jpg"/>
 							<figcaption>
 								限量999件
 							</figcaption>
 						</figure>
 						<figure>
+							<a href="#">￥19.9</a>
 							<img src="images/2.jpg"/>
 							<figcaption>
 								限量999件
 							</figcaption>
 						</figure>
 						<figure>
+							<a href="#">￥19.9</a>
 							<img src="images/3.jpg"/>
 							<figcaption>
 								限量999件
 							</figcaption>
 						</figure>
 						<figure>
+							<a href="#">￥35</a>
 							<img src="images/4.jpg"/>
 							<figcaption>
 								限量999件
@@ -169,8 +178,9 @@
 			</div>
 		</div>
 		<div class="banner">
-			<a href="#"><img src="images/banner1.png"/></a>
+			<a href="#"></a>
 		</div>
+		<!--indexmain-->
 		<div class="index_main">
 			<section>
 			
@@ -179,22 +189,93 @@
 				
 			</aside>
 		</div>
+		<!--btmbg-->
 		<div class="btm_bg">
 			<img src="images/bg_sec_btm.png"/>
 		</div>
 		
+		<!--bottom-->
 		<div class="bottom">
 			<div class="btm_main">
-				
+				<div class="btm_top">
+					<ul>
+						<p><i class="iconfont icon-new"></i>　新手指南</p>
+						<li><a href="#">注册登录</a></li>
+						<li><a href="#">抢购商品</a></li>
+						<li><a href="#">购物车操作</a></li>
+						<li><a href="#">下单支付</a></li>
+						
+					</ul>
+					<ul>
+						<p><i class="iconfont icon-daohang-shoukuanxinxi"></i>　常见问题</p>
+						<li><a href="#">热门常见问题</a></li>
+						<li><a href="#">退货/退款相关</a></li>
+						<li><a href="#">发货相关</a></li>
+						<li><a href="#">平台交易规则</a></li>
+						
+					</ul>
+					<ul>
+						<p><i class="iconfont icon-zhanghao"></i>　账号管理</p>
+						<li><a href="#">会员注册</a></li>
+						<li><a href="#">密码管理</a></li>
+						<li><a href="#">投诉举报</a></li>
+						<li><a href="#">不良信息处理</a></li>
+						
+					</ul>
+					<ul>
+						<p><i class="iconfont icon-icon1"></i>　支付相关</p>
+						<li><a href="#">在线支付</a></li>
+						<li><a href="#">余额支付</a></li>
+						
+					</ul>
+					<ul>
+						<p><i class="iconfont icon-distribution"></i>　配送相关</p>
+						<li><a href="#">配送说明</a></li>
+						<li><a href="#">物流信息</a></li>
+						<li><a href="#">验货签收</a></li>					
+					</ul>
+					<ul>
+						<p><i class="iconfont icon-xuanzhongpinpaixiaofeizhe"></i>　消费者保障</p>
+						<li><a href="#">退货政策</a></li>
+						<li><a href="#">退货流程</a></li>
+						<li><a href="#">退货方式和时效</a></li>
+						<li><a href="#">交易保障安全</a></li>
+						<li><a href="#">保障金制度</a></li>
+					</ul>
+					<div class="sq">
+						<h4>　　关注社区</h4>
+						<p>　　　优惠特卖早知道</p>
+					</div>
+				</div>
+				<div class="btm_foot">
+					<img src="images/btm_foot.png"/>
+				</div>
 			</div>
 		</div>
+		<!--links-->
 		<div class="links">
 			<div class="links_main">
+				<a href="#">首页</a>
+				<a href="#">关于贝贝</a>
+				<a href="#">商家入驻</a>
+				<a href="#">正品保证</a>
+				<a href="#">人才招聘</a>
+				<a href="#">联系我们</a>
+				<a href="#">帮助中心</a>
+				<a href="#">友情链接</a>
+				<a href="#">手机客户端</a>
+				<a href="#">客服在线</a>
+				<a href="#">贝贝公益</a>
+				<a href="#">品质健康</a>
+				<a href="#">育儿社区</a>
 				
 			</div>
 		</div>
+		<!--footer-->
 		<footer>
 			<div class="foot_main">
+				<p>浙ICP备14025287号 | 食品流通许可证：SP3301041510054925 | 出版物经营许可证：新出发零字第00086号</p>
+				<p>&copy;2014-2018 杭州贝购科技有限公司 All Rights Reserved. 客服热线：0571-10107788</p>
 				
 			</div>
 		</footer>
