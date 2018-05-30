@@ -6,6 +6,7 @@
 		<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
 	</head>
 	<body>
@@ -14,9 +15,9 @@
 			<div class="top_main">
 				<div id="top_right">
 					<span class="spa">您好，</span>
-					<a class="spa" href="login.html">请登录</a>
+					<a id="index_login" class="spa" href="login.html">请登录</a>
 					<ul>
-						<li><a href="register.html" style="color: red;">免费注册</a></li>
+						<li id="index_reg"><a href="register.html" style="color: red;">免费注册</a></li>
 						<li><a href="#">商家入驻</a></li>
 						<li>
 							<ul>
@@ -62,13 +63,13 @@
 				</div>
 				<div class="logo_r">
 					
-					<div class="cart">我的购物车
+					<div class="cart"><a href="cart.html">我的购物车</a>
 						<span class="sanjiao"></span>
 						<div>
 							<p>购物车空空如也</p>
 							<li>
 								<span>小计：<b>0.00</b></span>
-								<a href="#">去结算</a>
+								<a href="cart.html">去结算</a>
 							</li>
 						</div>
 					</div>
@@ -101,7 +102,7 @@
 			</div>
 		</nav>
 		<div class="ad">
-			<a href="#"><i class="iconfont icon-gouwuche"></i>
+			<a href="cart.html"><i class="iconfont icon-gouwuche"></i>
 					<span>
 						<h2>购物车空空如也</h2>
 						<p>快去添加商品</p>
@@ -195,7 +196,5 @@
 				
 			</div>
 		</footer>
-		
-		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

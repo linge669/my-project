@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<!--top-->
@@ -14,9 +15,9 @@
 			<div class="top_main">
 				<div id="top_right">
 					<span class="spa">您好，</span>
-					<a class="spa" href="login.html">请登录</a>
+					<a id="index_login" class="spa" href="login.html">请登录</a>
 					<ul>
-						<li><a href="register.html" style="color: red;">免费注册</a></li>
+						<li id="index_reg"><a href="register.html" style="color: red;">免费注册</a></li>
 						<li><a href="#">商家入驻</a></li>
 						<li>
 							<ul>
@@ -76,7 +77,63 @@
 				</div>
 			</div>
 		</header>
-	
+		<div class="cart_list">
+			<div class="cart_list_title">
+				<h3>我的购物车</h3>
+				<div class="cart_list_tit_right">
+					<span></span>
+					<dl>
+						<dt>1</dt>
+						<dd>购物车</dd>
+					</dl>
+					<dl>
+						<dt>2</dt>
+						<dd>确认订单</dd>
+					</dl>
+					<dl>
+						<dt>3</dt>
+						<dd>在线支付</dd>
+					</dl>
+					<dl>
+						<dt>4</dt>
+						<dd>完成</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="cart_list_info">
+				<div class="cart_info_title">
+					<label for="checkall">
+						<input type="checkbox"  id="checkall"  />全选
+					</label>
+					<span>商品</span>
+					<span>单价</span>
+					<span>数量</span>
+					<span>小计</span>
+					<span>操作</span>
+				</div>
+				<div id="cart_info_main">
+					<!--
+					<li goods_id="11">
+						<input type="checkbox" value="" />
+						<img src="images/1.jpg"/>
+						<a href="prodetial.html">1223564</a>
+						<span>￥39.9</span>
+						<em><a href="#">　-　</a>11<a href="#">　+　</a></a></em>
+						<b>0.00</b>
+						<a href="#">删除</a>
+					</li>-->
+					<div class="cart_price">
+						<label for="checkall">
+							<input type="checkbox"  class="checkall"  />全选
+						</label>
+						<a href="#">删除</a>
+						<p>共有<span>22</span>件商品，总计（不含运费）<i id="count_price">39.9</i>元</p>
+						<a href="#">提交订单</a>
+					</div>
+				</div>
+			</div>
+		
+		</div>
 		<!--links-->
 		<div class="links" style="margin-top: 40px;">
 			<div class="links_main" >
@@ -104,7 +161,5 @@
 				
 			</div>
 		</footer>
-		
-		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

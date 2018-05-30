@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="css/jigsaw.css"/>
+		
 		<script src="js/jigsaw.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
@@ -44,7 +45,7 @@
 							<input type="password" id="lg_psw" class="psw" placeholder="密码"/>
 						</label>
 						<p style="display: flex;justify-content: space-between;">
-							<em style="font-style: normal;"><input type="checkbox" id="zd_login" />7天免登录</em>
+							<em style="font-style: normal;"><input type="checkbox" id="zd_login" checked=""/> 7天免登录</em>
 							<a href="#">忘记密码？</a>
 						</p>
 						<div id="captcha" style="position: relative"></div>
@@ -80,11 +81,12 @@
 		</div>
 	</footer>
 	<script type="text/javascript">
+		
 		var lg_btn=document.getElementById("btn_login");
 		 jigsaw.init(document.getElementById('captcha'), function () {
 		  	    lg_btn.onclick=login_yz;
 		  })
 	</script>
-		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
