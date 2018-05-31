@@ -19,9 +19,7 @@
 					removeCookie("token");
 					location.href="login.html";
 				})
-				
 			}
-			
 		})
 		
 		function setCookie(name, value, n) {
@@ -205,14 +203,7 @@ $(function(){
 			
 		})
 					
-	}/*
-	
-	$("#list_num a").click(function(){
-		$(this).css("background","red");
-		$(this).siblings().css("background","");
-		
-	})
-	*/
+	}
 	
 })
 
@@ -224,17 +215,10 @@ $(function(){
 	/*console.log(newarr);*/
 	$.get("http://h6.duchengjiu.top/shop/api_goods.php",{"goods_id":newarr[1]},function(b){
 		var str3="";
+		var str4="";
+		str4=`<img src="${b.data[0]["goods_thumb"]}" alt="">`;
 		/*console.log(b);*/
-		str3+=`<div class="imgbox">
-				    <div class="probox">
-				        <img src="${b.data[0]["goods_thumb"]}" alt="">
-				        <div class="hoverbox"></div>
-				    </div>
-				    <div class="showbox">
-				        <img src="${b.data[0]["goods_thumb"]}" alt="">
-				    </div>
-				</div>		
-					<div class="pro_info">
+		str3+=`	<div class="pro_info">
 						<p class="pro_name">${b.data[0].goods_name}</p>
 						<p class="pro_des">${b.data[0].goods_desc}</p>
 						<p class="pro_price">￥${b.data[0].price}　<span>3.4折</span><b>包邮</b></p>
@@ -244,8 +228,9 @@ $(function(){
 					
 			</div>`;
 			
-			
-		$(".detial_left").html("").append(str3);
+		$("#zoom").before(str4);
+		$("#bigArea img").attr("src",b.data[0]["goods_thumb"]);
+		$(".detial_left").append(str3);
 		$(".add_cart").click(function(){
 			var aa=getCookie(newarr[1]);
 			if(getCookie(newarr[1])){
