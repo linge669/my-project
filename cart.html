@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>购物车</title>
 		<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
@@ -103,7 +103,7 @@
 			<div class="cart_list_info">
 				<div class="cart_info_title">
 					<label for="checkall">
-						<input type="checkbox"  id="checkall"  />全选
+						<input type="checkbox" id="checkall" class="checkall" checked="checked"/>全选
 					</label>
 					<span>商品</span>
 					<span>单价</span>
@@ -114,20 +114,20 @@
 				<div id="cart_info_main">
 					<!--
 					<li goods_id="11">
-						<input type="checkbox" value="" />
+						<input type="checkbox" value="" checked="checked"/>
 						<img src="images/1.jpg"/>
 						<a href="prodetial.html">1223564</a>
 						<span>￥39.9</span>
-						<em><a href="#">　-　</a>11<a href="#">　+　</a></a></em>
+						<em><a href="#">　-　</a>11<a href="#">　+　</a></em>
 						<b>0.00</b>
 						<a href="#">删除</a>
 					</li>-->
-					<div class="cart_price">
+					<div id="cart_price" class="cart_price">
 						<label for="checkall">
-							<input type="checkbox"  class="checkall"  />全选
+							<input type="checkbox" class="checkall" checked="checked"/>全选
 						</label>
-						<a href="#">删除</a>
-						<p>共有<span>22</span>件商品，总计（不含运费）<i id="count_price">39.9</i>元</p>
+						<a class="delete_all">删除</a>
+						<p>共有<span id="count_num">0</span>件商品，总计（不含运费）<i id="count_price">0.00</i>元</p>
 						<a href="#">提交订单</a>
 					</div>
 				</div>

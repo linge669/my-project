@@ -7,16 +7,17 @@
 		var patt_psw=/^[a-z0-9_-]{6,18}$/;
 		var token;
 		$(function(){
-			if(getCookie("user_id")==null){
+			
+			if(getCookie("username")){
 				
-			}else{
-				$("#index_login").html(getCookie("user_id"));
+				$("#index_login").html(getCookie("username"));
+				$("#lg_user").val(getCookie("username"));
+				$("#lg_psw").val(getCookie("password"));
 				$("#index_reg").html('<a href="#" style="color: red;">退出</a>').click(function(){
 					removeCookie("username");
 					removeCookie("password");
-					removeCookie("user_id");
 					removeCookie("token");
-					location.reload();
+					location.href="login.html";
 				})
 				
 			}
@@ -73,18 +74,19 @@
 			jQuery.post("http://h6.duchengjiu.top/shop/api_user.php",{status:"login",username:lg_name,password:lg_pw},function(data){
 						if(data.code==0){/*
 							console.log(data);*/
-							token=data["data"].token;
-							alert(data.message);
+							token=data["data"].token;/*
+							alert(data.message);*/
 								setCookie("username",lg_name,7);
 								setCookie("password",lg_pw,7);
 								setCookie("user_id",data["data"].user_id);
 								setCookie("token",token,7);
+								location.href="index.html";
 						}else{
 							alert(data.message);
 							location.reload();
 						}
 					})	
-			location.href="index.html";
+			
 		}
 $(function(){
 	var str1="";
@@ -249,8 +251,11 @@ $(function(){
 			if(getCookie(newarr[1])){
 				aa++;
 				setCookie(newarr[1],aa);
+				alert("数量+1");
+				location.reload();
 			}else{
 				setCookie(newarr[1],1);
+				alert("已成功添加购物车");
 			}
 		})
 	})
@@ -264,30 +269,75 @@ for (var i=0;i<preCookie.length;i++) {
 	newCart.push(preCookie[i].split("=")[0]);
 	valuecart.push(preCookie[i].split("=")[1]);
 }
-console.log(newCart);
+/*console.log(valuecart);*/
 $(function(){
-	
-	for(var i=0;i<newCart.length;i++){
+	var sum_num=0;
+	var sum_price=0;
+	for(let m=0;m<newCart.length;m++){
+		
+		var cart_id=Number(newCart[m]);
 		var str3="";
-		var cart_id=Number(newCart[i]);
-		var id_value=Number(valuecart[i]);
 		if(Boolean(cart_id)){
-			console.log(id_value);
-			$.get("http://h6.duchengjiu.top/shop/api_goods.php",{"goods_id":newCart[i]},function(b){
-				
+			
+			$.get("http://h6.duchengjiu.top/shop/api_goods.php",{"goods_id":newCart[m]},function(b){
+				/*console.log(Number(valuecart[m]));*/
 				str3=`<li goods_id="${cart_id}">
-						<input type="checkbox" value="" />
+						<input type="checkbox" class="pre_checked" value="" checked="checked"/>
 						<img src="${b.data[0]["goods_thumb"]}"/>
-						<a href="prodetial.html?goods_id=cart_id">${b.data[0].goods_name}</a>
+						<a href="prodetial.html?goods_id=${b.data[0].goods_id}">${b.data[0].goods_name}</a>
 						<span>${b.data[0]["price"]}</span>
-						<em><a href="#">　-　</a>${id_value}<a href="#">　+　</a></a></em>
-						<b class="count_price">${Number(b.data[0]["price"])*id_value}</b>
-						<a href="#">删除</a>
+						<em><a class="jian_cart" goods_id="${b.data[0].goods_id}">　-　</a>　${Number(valuecart[m])}　<a goods_id="${b.data[0].goods_id}" class="jia_cart">　+　</a></em>
+						<b class="count_price">${Number(b.data[0]["price"])*Number(valuecart[m])}</b>
+						<a class="delete_this" goods_id="${b.data[0].goods_id}">删除</a>
 					</li>
 				`;
-				$("#cart_info_main").prepend(str3);
-			})
+					$("#cart_info_main").prepend(str3);
+					$(".delete_this").click(function(){
+						removeCookie($(this).attr("goods_id"));
+						location.reload();
+					});	
+					
+					sum_num+=Number(valuecart[m]);
+					sum_price+=Number(b.data[0]["price"])*Number(valuecart[m]);
+					$("#count_num").html(sum_num);
+					$("#count_price").html(sum_price);
+					window.oninput=function(){
+							console.log($(".checkall").is(":checked"));
+							if($(".checkall").is(":checked")){
+								$("input[type='checkbox']").prop("checked",true);
+								}
+							}
+					$(".jian_cart").eq(0).on("click",function(){
+						var pre_cart=getCookie($(this).attr("goods_id"));
+						pre_cart--;
+						setCookie($(this).attr("goods_id"),pre_cart);
+						if(pre_cart<=0){
+							removeCookie($(this).attr("goods_id"));
+						}
+						location.reload();
+					})
+					$(".jia_cart").eq(0).on("click",function(){
+						var pre_cart=getCookie($(this).attr("goods_id"));
+						pre_cart++;
+						setCookie($(this).attr("goods_id"),pre_cart);
+						location.reload();
+					})
+				})
+			}
 		}
-	}
+	})
+
+$(function(){
 	
+		$(".delete_all").click(function(){
+			for(let n=0;n<newCart.length;n++){
+			var cart_id=Number(newCart[n]);
+			console.log(cart_id);
+			if(Boolean(cart_id)){
+				removeCookie(cart_id);
+				location.reload();
+					}
+				}
+		})
+		
 })
